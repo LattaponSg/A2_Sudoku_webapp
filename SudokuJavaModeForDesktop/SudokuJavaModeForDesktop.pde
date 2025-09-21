@@ -1,4 +1,4 @@
-int[][] a = {
+int a[][] = {
             {8,7,6,5,4,3,1,9,2},
             {5,4,3,2,1,9,7,6,8},
             {2,1,9,8,7,6,4,3,5},
@@ -12,12 +12,12 @@ int[][] a = {
             {9,8,7,6,5,4,2,1,3}
         };
 
-int board[][] = new int [9][9]; // store the number form ver a
-int blank[] = new int [7]; //store the random number
+int board[][] = new int [9][9]; // store the number form verible a[][]
+int blank[] = new int [7]; //store the random number for make it visible
 int CellSize = 50; 
-int BoardSize = 9* CellSize;
+int BoardSize = 9 * CellSize;
 
-int rows , cols;
+int rows , cols; //Check rows and cols in mouse pressed
 
 void setup() {
     size(50*9,50*9);
