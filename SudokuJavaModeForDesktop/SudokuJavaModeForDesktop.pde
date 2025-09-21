@@ -50,8 +50,16 @@ void setup() {
 }
 
 void draw(){
+    
 
+}
+void mousePressed(){ 
+    int row = mouseX / CellSize;
+    int col = mouseY / CellSize;
 
+    if(true){
+        println((1+row) +" , "+ (1+col));
+    }
 }
 
 void Board(){
