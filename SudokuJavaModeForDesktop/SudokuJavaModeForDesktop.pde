@@ -16,6 +16,17 @@ int board[][] = new int [9][9]; // store the number form ver a
 int blank[] = new int [7]; //store the random number
 
 
+void setup() {
+    SetNumberInBoard();
+    
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            System.out.print(board[i][j] + " ");
+        }
+        System.out.println();
+    }
+}
+
 void RandomBlank(){
     int i = 0;
     while(i < 7){
@@ -36,16 +47,5 @@ void SetNumberInBoard(){
             rows[j] = val;
         }
         board[i] = rows;
-    }
-}
-
-void setup() {
-    SetNumberInBoard();
-    
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            System.out.print(board[i][j] + " ");
-        }
-        System.out.println();
     }
 }
