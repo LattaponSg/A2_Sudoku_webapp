@@ -12,6 +12,27 @@ int[][] a = {
             {9,8,7,6,5,4,2,1,3}
         };
 
-int board[]; // store the number form ver a
-int blank[]; //store the random number
+int board[][] = new int [9][9]; // store the number form var a
+int blank[] = new int [7]; //store the random number
 
+void random_blank(){
+    int i = 0;
+    while(i < 7){
+        blank[i] = (1+random(1,9));
+        i++;
+    }
+
+    void SetNumberInBoard(){
+    for(int i = 0 ; i < 9 ; i++){
+        RandomBlank();
+        int rows[] = new int [9];
+        for(int j = 0 ;j < 9; j++){
+            int val = a[i][j];
+            for(int k = 0; k < blank.length ; k++){
+                if(val == blank[k]) {val = 0;}
+            }
+            rows[j] = val;
+        }
+        board[i] = rows;
+    }
+}
