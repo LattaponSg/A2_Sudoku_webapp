@@ -1,2 +1,2 @@
-# A2_Sudoku_webapp
+# A2_Sudoku
 
