@@ -14,23 +14,55 @@ int[][] a = {
 
 int board[][] = new int [9][9]; // store the number form ver a
 int blank[] = new int [7]; //store the random number
+int CellSize = 50; 
+int BoardSize = 9* CellSize;
 
 
 void setup() {
+    size(50*9,50*9);
+    textSize(20);
+    textAlign(CENTER, CENTER);
+    fill(0);
+    Board();
+    
+
     SetNumberInBoard();
-    println("___________________________________");
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
-            print(board[i][j] + " | ");
+            if(board[i][j] != 0){
+                int x = j * CellSize + CellSize / 2;
+                int y = i * CellSize + CellSize / 2;
+                text(board[i][j], x, y);
+            }
         }
-        println();
     }
-    println("___________________________________");
+    
+    
+    //    SetNumberInBoard();
+    //println("___________________________________");
+    //for (int i = 0; i < 9; i++) {
+    //    for (int j = 0; j < 9; j++) {
+    //        print(board[i][j] + " | ");
+    //    }
+    //    println();
+    //}
+    //println("___________________________________");
 }
 
 void draw(){
 
 
+}
+
+void Board(){
+    for(int i = 0; i <= 9 ; i++){
+      if(i % 3 == 0){
+          strokeWeight(3);
+      }else { strokeWeight(1); }
+      
+        line(0 , i*CellSize , BoardSize , i * CellSize); 
+        line(i*CellSize , 0 , i*CellSize , BoardSize);
+    }    
 }
 
 void RandomBlank(){
@@ -48,7 +80,8 @@ void SetNumberInBoard(){
         for(int j = 0 ;j < 9; j++){
             int val = a[i][j];
             for(int k = 0; k < blank.length ; k++){
-                if(val == blank[k]) {val = 0;}
+                if(val == blank[k]) 
+                    {val = 0;}
             }
             rows[j] = val;
         }
