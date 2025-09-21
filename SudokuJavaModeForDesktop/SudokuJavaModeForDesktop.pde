@@ -17,6 +17,7 @@ int blank[] = new int [7]; //store the random number
 int CellSize = 50; 
 int BoardSize = 9* CellSize;
 
+int rows , cols;
 
 void setup() {
     size(50*9,50*9);
@@ -51,15 +52,24 @@ void setup() {
 
 void draw(){
     
-
 }
+
 void mousePressed(){ 
-    int row = mouseX / CellSize;
-    int col = mouseY / CellSize;
+    cols = mouseX / CellSize;
+    rows = mouseY / CellSize;
 
     if(true){
-        println((1+row) +" , "+ (1+col));
+        println((1+rows) +" , "+ (1+cols));
     }
+}
+
+void keyPressed(){
+    if(key >= '1' && key <= '9'){
+        textAlign(CENTER, CENTER);
+        println(key);
+        text(key,cols * CellSize + CellSize/2 ,rows * CellSize + CellSize/2);
+    }
+
 }
 
 void Board(){
