@@ -16,6 +16,23 @@ int board[][] = new int [9][9]; // store the number form ver a
 int blank[] = new int [7]; //store the random number
 
 
+void setup() {
+    SetNumberInBoard();
+    println("___________________________________");
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            print(board[i][j] + " | ");
+        }
+        println();
+    }
+    println("___________________________________");
+}
+
+void draw(){
+
+
+}
+
 void RandomBlank(){
     int i = 0;
     while(i < 7){
@@ -37,16 +54,4 @@ void SetNumberInBoard(){
         }
         board[i] = rows;
     }
-}
-
-void setup() {
-    SetNumberInBoard();
-    println("___________________________________");
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            print(board[i][j] + " | ");
-        }
-        println();
-    }
-    println("___________________________________");
 }
