@@ -24,5 +24,16 @@ function set_array_b() {
   b = [];
   for (let r = 0; r < 9; r++) {
     random_blank();
+    let row = [];
+    for (let c = 0; c < 9; c++){
+      let val = a[r][c];
+      for (let i = 0; i < blank.length; i++){
+        if (val == blank[i]){
+          val = 0;          
+        }
+      }
+      row.push(val);
+    }
+    b.push(row);
   }
-} 
+}
