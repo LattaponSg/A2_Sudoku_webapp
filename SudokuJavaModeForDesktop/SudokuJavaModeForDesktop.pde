@@ -24,14 +24,21 @@ void setup() {
     textSize(35);
     textAlign(CENTER, CENTER);
     fill(0);
-    Board();    
+    DrawBoard();    
     RandomBlank();
-    SetNumberInBoard();
-
-    
 }
 
 void draw(){
+    background(200);
+    DrawBoard();
+    SetNumberInBoard();
+    DrawNumber();
+    
+  //  if(rows >= 0 && cols >= 0){
+  //      fill(173, 216, 230);
+  //      noStroke();
+  //      rect(cols*CellSize, rows*CellSize, CellSize, CellSize);
+  //}
 
 }
 
@@ -51,11 +58,12 @@ void keyPressed(){
 
 }
 
-void Board(){
+void DrawBoard(){
   
     //about Board and line\\
     
     //make the lines in board
+    fill(0);
     for(int i = 0; i <= 9 ; i++){
       if(i % 3 == 0){
           strokeWeight(3);
@@ -85,7 +93,7 @@ void Board(){
 void RandomBlank(){
     int i = 0;
     while(i < 7){
-        blank[i] = (1+int(random(1,10))); // 1-9
+        blank[i] = int(random(0,10));; // 1-9
         i++;
     }
 }
@@ -104,6 +112,10 @@ void SetNumberInBoard(){
         board[i] = rows;
     }
     
+}
+
+void DrawNumber(){
+    fill(0);
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             if(board[i][j] != 0){
