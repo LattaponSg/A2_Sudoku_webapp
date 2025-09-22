@@ -13,7 +13,7 @@ int a[][] = {
         };
 
 int board[][] = new int [9][9]; // store the number form verible a[][]
-int blank[] = new int [7]; //store the random number for make it visible
+int blank[] = new int [7]; //store the random position for make it visible in Cols
 int CellSize = 50; 
 int BoardSize = 9 * CellSize;
 
