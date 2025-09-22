@@ -112,3 +112,5 @@ void SetNumberInBoard(){
         board[i] = rows;
     }
 }
+
+//test
