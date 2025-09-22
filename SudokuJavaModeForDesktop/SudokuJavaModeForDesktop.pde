@@ -41,10 +41,6 @@ void setup() {
     //println("___________________________________");
 }
 
-void draw(){
-    
-}
-
 void mousePressed(){ 
     cols = mouseX / CellSize;
     rows = mouseY / CellSize;
@@ -101,7 +97,6 @@ void Board(){
     //set number in answer Cell
     for(int i = 0 ; i < 9 ; i++){
         text(1+i,i * CellSize + CellSize / 2, 10 * CellSize + CellSize/2);
-    
     }
 }
 
