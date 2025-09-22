@@ -28,13 +28,15 @@ void setup() {
     
 }
 
+void draw(){
+
+}
+
 void mousePressed(){ 
     cols = mouseX / CellSize;
     rows = mouseY / CellSize;
 
-    if(true){
-        println((rows) +" , "+ (cols));
-    }
+    println((rows) +" , "+ (cols));
 }
 
 void keyPressed(){
