@@ -20,24 +20,15 @@ int BoardSize = 9 * CellSize;
 int rows , cols; //Check rows and cols in mouse pressed
 
 void setup() {
-    size(50*9,50*9);
-    textSize(20);
+    size(50*9,50*12);
+    textSize(35);
     textAlign(CENTER, CENTER);
     fill(0);
     Board();
     
-
-    SetNumberInBoard();
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            if(board[i][j] != 0){
-                int x = j * CellSize + CellSize / 2;
-                int y = i * CellSize + CellSize / 2;
-                text(board[i][j], x, y);
-            }
-        }
-    }
     
+
+
     
     //    SetNumberInBoard();
     //println("___________________________________");
@@ -59,7 +50,7 @@ void mousePressed(){
     rows = mouseY / CellSize;
 
     if(true){
-        println((1+rows) +" , "+ (1+cols));
+        println((rows) +" , "+ (cols));
     }
 }
 
@@ -73,14 +64,45 @@ void keyPressed(){
 }
 
 void Board(){
+  
+    //about Board and line\\
+    
+    //make the lines in board
     for(int i = 0; i <= 9 ; i++){
       if(i % 3 == 0){
           strokeWeight(3);
       }else { strokeWeight(1); }
       
-        line(0 , i*CellSize , BoardSize , i * CellSize); 
-        line(i*CellSize , 0 , i*CellSize , BoardSize);
-    }    
+        line(0 , i*CellSize , BoardSize , i * CellSize);  // X-Axis Line
+        line(i*CellSize , 0 , i*CellSize , BoardSize);   // Y- Axis Line
+    }
+    //Make the Lines of answer Cell
+    strokeWeight(3);
+    line(0,CellSize*10,BoardSize,CellSize*10);
+    line(0,CellSize*11,BoardSize,CellSize*11);
+    for(int i = 0; i <= 9 ; i++){
+        line(CellSize*i , CellSize*10 ,CellSize * i , CellSize*11);
+    }
+    
+    //About Text and Number\\
+    
+    //set number in board
+    SetNumberInBoard();
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            if(board[i][j] != 0){
+                int x = j * CellSize + CellSize / 2;
+                int y = i * CellSize + CellSize / 2;
+                text(board[i][j], x, y);
+            }
+        }
+    }
+    
+    //set number in answer Cell
+    for(int i = 0 ; i < 9 ; i++){
+        text(1+i,i * CellSize + CellSize / 2, 10 * CellSize + CellSize/2);
+    
+    }
 }
 
 void RandomBlank(){
