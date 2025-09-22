@@ -26,19 +26,6 @@ void setup() {
     fill(0);
     Board();
     
-    
-
-
-    
-    //    SetNumberInBoard();
-    //println("___________________________________");
-    //for (int i = 0; i < 9; i++) {
-    //    for (int j = 0; j < 9; j++) {
-    //        print(board[i][j] + " | ");
-    //    }
-    //    println();
-    //}
-    //println("___________________________________");
 }
 
 void mousePressed(){ 
