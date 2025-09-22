@@ -24,15 +24,30 @@ void setup() {
     textSize(35);
     textAlign(CENTER, CENTER);
     fill(0);
-    Board();    
-    RandomBlank();
+    Board();
+    
+        //set number in board
     SetNumberInBoard();
-
+    for (int i = 0; i < 9; i++) {
+        for (int j = 0; j < 9; j++) {
+            if(board[i][j] != 0){
+                int x = j * CellSize + CellSize / 2;
+                int y = i * CellSize + CellSize / 2;
+                text(board[i][j], x, y);
+            }
+        }
+    }
+    
+    //set number in answer Cell
+    for(int i = 0 ; i < 9 ; i++){
+        text(1+i,i * CellSize + CellSize / 2, 10 * CellSize + CellSize/2);
+    }
     
 }
 
 void draw(){
-
+    background(200);
+    Board();
 }
 
 void mousePressed(){ 
@@ -72,15 +87,8 @@ void Board(){
         line(CellSize*i , CellSize*10 ,CellSize * i , CellSize*11);
     }
     
-    //About Text and Number\\
-    
-    //
-    
-    //set number in answer Cell
-    for(int i = 0 ; i < 9 ; i++){
-        text(1+i,i * CellSize + CellSize / 2, 10 * CellSize + CellSize/2);
-    }
 }
+
 
 void RandomBlank(){
     int i = 0;
@@ -92,6 +100,7 @@ void RandomBlank(){
 
 void SetNumberInBoard(){
     for(int i = 0 ; i < 9 ; i++){
+        RandomBlank();
         int rows[] = new int [9];
         for(int j = 0 ;j < 9; j++){
             int val = a[i][j];
@@ -102,15 +111,5 @@ void SetNumberInBoard(){
             rows[j] = val;
         }
         board[i] = rows;
-    }
-    
-    for (int i = 0; i < 9; i++) {
-        for (int j = 0; j < 9; j++) {
-            if(board[i][j] != 0){
-                int x = j * CellSize + CellSize / 2;
-                int y = i * CellSize + CellSize / 2;
-                text(board[i][j], x, y);
-            }
-        }
     }
 }
