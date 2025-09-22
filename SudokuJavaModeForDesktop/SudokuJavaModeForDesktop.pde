@@ -102,3 +102,6 @@ void SetNumberInBoard(){
         board[i] = rows;
     }
 }
+
+
+//tiegowjiiogwoiqj
