@@ -90,7 +90,7 @@ void DrawBoard(){
     }
 }
 
-void RandomBlank(){
+void RandomBlank(){ // Need to Edits
     int i = 0;
     while(i < 7){
         blank[i] = int(random(0,10));; // 1-9
