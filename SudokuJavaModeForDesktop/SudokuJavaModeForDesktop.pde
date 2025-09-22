@@ -50,6 +50,10 @@ void setup() {
     //println("___________________________________");
 }
 
+void draw(){
+    
+}
+
 void mousePressed(){ 
     cols = mouseX / CellSize;
     rows = mouseY / CellSize;
